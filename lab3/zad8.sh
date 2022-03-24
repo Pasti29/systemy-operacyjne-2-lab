@@ -28,3 +28,20 @@
 # katalogu powinien znaleźć się dany plik).
 #
 
+
+find dane/pierwiastki/ -type f -exec basename {} \; | while read file; do
+    if [ -e "dane/elements/$file" ] || [ -h "dane/elements/$file" ]; then
+        :
+    else
+        echo "L:$file"
+    fi
+done
+
+
+find dane/elements/ -type f -exec basename {} \; | while read file; do
+    if [ -e "dane/pierwiastki/$file" ] || [ -h "dane/pierwiastki/$file" ]; then
+        :
+    else
+        echo "P:$file"
+    fi
+done

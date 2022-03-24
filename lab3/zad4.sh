@@ -22,3 +22,4 @@
 # Wyświetlić ścieżki kanoniczne do wskazywanych miejsc, każdą w osobnej linii.
 #
 
+find dane/pierwiastki -type l -exec readlink -ef {} \;

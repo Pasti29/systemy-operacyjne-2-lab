@@ -22,3 +22,8 @@
 # w osobnej linii.
 #
 
+for file in $(find dane/icao); do
+    if [ "$file" -ef dane/twardziel ]; then
+        basename "$file"
+    fi
+done

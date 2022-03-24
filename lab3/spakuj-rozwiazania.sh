@@ -10,4 +10,4 @@
 #
 # Uwaga! Istniejący plik z rozwiązaniami zostanie nadpisany!
 #
-tar --create --gzip --file so2-lab3-rozwiazania.tgz zad[1-9A].sh
+zip so2-lab3-rozwiazania.zip zad[1-9A].sh

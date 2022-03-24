@@ -23,3 +23,21 @@
 # Jako wynik wyświetlić po prostu samą liczbę, nic więcej.
 #
 
+
+touch help_file
+
+for file1 in $(find dane/icao/ -type f); do
+    unique=1
+    while read file2; do
+        if [ "$file1" -ef "$file2" ]; then
+            unique=0
+        fi
+    done < help_file
+    if [ "$unique" -eq 1 ]; then
+        echo "$file1" >> help_file
+    fi
+done
+
+count=$(wc -l < help_file)
+echo $count
+rm help_file
