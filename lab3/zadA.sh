@@ -26,9 +26,9 @@
 
 touch help_file
 
-for file1 in $(find dane/icao/ -type f); do
+while IFS= read -r file1; do
     unique=1
-    while read file2; do
+    while read -r file2; do
         if [ "$file1" -ef "$file2" ]; then
             unique=0
         fi
@@ -36,8 +36,8 @@ for file1 in $(find dane/icao/ -type f); do
     if [ "$unique" -eq 1 ]; then
         echo "$file1" >> help_file
     fi
-done
+done < <(find dane/icao/ -type f)
 
 count=$(wc -l < help_file)
-echo $count
+echo "$count"
 rm help_file

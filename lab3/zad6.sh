@@ -23,8 +23,8 @@
 # kanonicznymi. Element wskazywany przez dowiązanie nie musi istnieć.
 #
 
-for file in $(find dane/pierwiastki -type l -exec readlink {} \;); do
-    if [[ "$(dirname $file)" = "/"* ]]; then
+while IFS= read -r file; do
+    if [[ "$(dirname "$file")" = "/"* ]]; then
         realpath -m "$file"
     fi
-done
+done < <(find dane/pierwiastki -type l -exec readlink {} \;)
