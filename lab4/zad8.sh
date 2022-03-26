@@ -26,3 +26,4 @@
 # (każda nazwa w nowej linii).
 #
 
+find linux-5.11.13/ -name "testing" -prune -o \( -name "*.h" -empty \) -exec basename {} \;

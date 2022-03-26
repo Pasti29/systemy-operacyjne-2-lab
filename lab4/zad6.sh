@@ -26,3 +26,4 @@
 # liczbę plików).
 #
 
+find linux-5.11.13/ -size -1024c -perm /u=w \! -perm /g=w \! -perm /o=w | wc -l

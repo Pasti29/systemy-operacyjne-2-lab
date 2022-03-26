@@ -25,3 +25,6 @@
 # .sh na końcu nazwy). Jako wynik zwrócić ułamek w postaci X/Y i nic więcej.
 #
 
+Y=$(find linux-5.11.13/ -type f -executable | wc -l)
+X=$(find linux-5.11.13/ -type f -executable -name "*.sh" | wc -l)
+echo "$X/$Y"
