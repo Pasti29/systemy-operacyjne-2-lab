@@ -23,3 +23,5 @@
 # / wartość w każdym wierszu). Każdą nazwę użytkownika wypisać w osobnej linii.
 #
 
+
+cat dodatkowe/etc-passwd | grep -v '/bin/nologin' | grep -v '/bin/false' | cut -d ':' -f 1

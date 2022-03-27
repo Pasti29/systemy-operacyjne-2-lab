@@ -22,3 +22,5 @@
 # ilu jest użytkowników w tym systemie. Jako wynik zwrócić samą liczbę!
 #
 
+
+cat dodatkowe/etc-passwd | wc -l
