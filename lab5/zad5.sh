@@ -23,3 +23,5 @@
 # (* – wyszukać wszystkie linie, rozpoczynające się od słowa 'syslog')
 #
 
+
+cat dodatkowe/etc-services | grep 'syslog' | rev | cut -d ' ' -f 1 | rev | cut -d '/' -f 1 | sort | uniq
