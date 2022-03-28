@@ -24,3 +24,5 @@
 # Wyświetlić wyłącznie odszyfrowaną treść, nic poza tym.
 #
 
+
+cat dodatkowe/cezar | tr 'a-z' 'x-za-w'
