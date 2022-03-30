@@ -27,3 +27,9 @@
 # pliku ze strony: https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html
 #
 
+
+awk '
+    BEGIN { FS = "," }
+    NR == 1 { numCol = NF }
+    numCol != NF { print NR }
+' dodatkowe/cities.csv
