@@ -25,4 +25,7 @@
 #
 
 
-awk -F':' '$3 >= 1000 && $7 = /\/bin\/bash/ { print $1}' dodatkowe/etc-passwd
+awk '
+    BEGIN { FS = ":" }
+    $3 >= 1000 && $7 = /\/bin\/bash/ { print $1}
+' dodatkowe/etc-passwd
