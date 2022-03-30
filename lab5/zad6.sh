@@ -25,4 +25,4 @@
 #
 
 
-cat dodatkowe/ss-tulpn | grep -v 'Port' | rev | cut -d '*' -f 1 --complement | cut -d ' ' -f 1 --complement | grep '0.0.0.0' | cut -d ':' -f 1 | rev | sort | uniq | tr -d ' '
+cat dodatkowe/ss-tulpn | tail -n +2 | tr -s ' ' | cut -d ' ' -f 5 | grep '0.0.0.0' | cut -d ':' -f 2 | sort | uniq

@@ -27,3 +27,7 @@
 # Każdy adres e-mail wyświetlać w osobnej linii, nie wyświetlać nic ponadto.
 #
 
+
+grep -A 300 -m 1 'Lp.' dodatkowe/listaSluchaczy_E07-19x.csv | tail -n+2 | cut -d ';' -f 2 | cut --complement -c 1-4 | tr -s '\n' | while IFS= read -r id; do
+    echo "$id@student.pwr.edu.pl"
+done

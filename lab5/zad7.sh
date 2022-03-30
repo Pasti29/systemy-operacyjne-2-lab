@@ -22,3 +22,5 @@
 # oraz po spacji pełną nazwę procesu (wszystko od 11 kolumny do końca wiersza).
 #
 
+
+cat dodatkowe/ps-aux | tail -n +2 | tr -s ' ' | sort -k 3 | tail -n 1 | cut -d ' ' -f 2,11-16

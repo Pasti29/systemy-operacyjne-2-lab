@@ -26,4 +26,4 @@
 #
 
 
-cat dodatkowe/ps-aux | grep -v 'USER' | cut -d ' ' -f 1 | sort | uniq
+cat dodatkowe/ps-aux | tail -n +2 | cut -d ' ' -f 1 | sort | uniq
