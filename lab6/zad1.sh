@@ -25,3 +25,5 @@
 # (źródło: https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt).
 #
 
+
+awk '(NR + 1) % 3 == 0' dodatkowe/tadeusz.txt
