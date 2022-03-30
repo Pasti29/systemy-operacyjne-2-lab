@@ -26,3 +26,17 @@
 # dotyczących liczby znaków!
 #
 
+
+# NR in END equals number of lines in whole file
+awk '
+    {
+        numChar += length($0)
+        numWords += NF;
+    }
+    END {
+        numChar += NR;
+        print numChar;
+        print numWords;
+        print NR;
+    }
+' dodatkowe/nowomowa.txt
