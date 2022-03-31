@@ -28,3 +28,13 @@
 # pliku ze strony: https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html
 #
 
+
+awk '
+    BEGIN { FD = "," }
+    NR >= 2 {
+        id = substr($3, 2, 11)
+        average = ($4 + $5 + $6 + $7 + ($8 * 2)) / 6;
+
+        printf "%s %s\n", id, average;
+    }
+' dodatkowe/grades.csv
