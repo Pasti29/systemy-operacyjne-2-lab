@@ -28,6 +28,7 @@
 
 awk '
     {
+        lengthOfLine = 0;
         split($0, tablica, " ");
         for (word in tablica) {
             if (lengthOfLine == 0) {

@@ -26,3 +26,22 @@
 # uwzględnić taką sytuację.
 #
 
+awk '
+    {
+        for (i = 1; i <= NF; i++) {
+            lengthOfWord = length($i);
+            if (index($i, ",") != 0) {
+                lengthOfWord = length(substr($i, 1, index($i, ",") - 1));
+            }
+            else if (index($i, ".") != 0) {
+                lengthOfWord = length(substr($i, 1, index($i, ".") - 1));
+            }
+            tablica[lengthOfWord]++;
+        }
+    }
+    END {
+        for (iter in tablica) {
+            printf "%s %s\n", iter, tablica[iter];
+        }
+    }
+' dodatkowe/nowomowa.txt
