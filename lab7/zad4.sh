@@ -24,6 +24,6 @@
 
 
 awk '
-    $0 !~ /^[[:blank:]]+$/ && length($0) != 0 { nonBlank++; }
+    $0 !~ /^[[:blank:]]*$/ { nonBlank++; }
     END { printf "%s/%s\n", nonBlank, NR; }
 ' dodatkowe/slajdy.tex
