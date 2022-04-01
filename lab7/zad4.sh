@@ -22,3 +22,8 @@
 # Wynik wyświetlić jako ułamek w postaci X/Y.
 #
 
+
+awk '
+    $0 !~ /^[[:blank:]]+$/ && length($0) != 0 { nonBlank++; }
+    END { printf "%s/%s\n", nonBlank, NR; }
+' dodatkowe/slajdy.tex

@@ -22,3 +22,12 @@
 # pomijając linie puste i takie, których jedyną zawartość stanowią spacje.
 #
 
+awk '
+    $0 !~ /^$/ {
+        gsub(/<[^>]*>/, "");
+        gsub(/^( )+$/, "");
+        if(length($0) != 0) {
+            printf "%s\n", $0;
+        }
+    }
+' dodatkowe/cpplint.txt
