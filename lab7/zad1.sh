@@ -21,3 +21,13 @@
 # w nowej linii, bez powtórzeń, bez żadnych znaków innych niż litery.
 #
 
+
+awk '
+    {
+        for (i = 1; i <= NF; i++) {
+            if ($i ~ /^[A-Z]/) {
+                printf "%s\n", $i;
+            }
+        }
+    }
+' dodatkowe/lipsum.txt | sort | uniq
