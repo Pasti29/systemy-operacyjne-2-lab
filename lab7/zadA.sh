@@ -30,3 +30,47 @@
 # kolejnego zbioru kluczy i wartości.
 #
 
+
+awk '
+    {
+        for (i = 1; i <= NF; i++) {
+            start = match($i, /"[^"]*klucz[^"]*":/);
+            end = match($i, /":/);
+            if (end - start > 0) {
+                key = substr($i, start, end);
+                newKey = substr(key, 2, end - start - 1);
+                beginKey = "<" newKey ">";
+                sub(key, beginKey, $i);
+                endKey = " </" newKey "> ";
+                if ($(i + 1) ~ /^{/) {
+                    endKey = "}</" newKey ">";
+                    sub(/},/, endKey, $0);
+                }
+                else if ($(i + 1) ~ /}/) {
+                    sub(/}/, endKey, $0);
+                }
+                else {
+                    sub(/,/, endKey, $0);
+                }
+                
+            }
+
+            if ($i ~ /"[^"]*"/) {
+                value = substr($i, 2, length($i) - 2);
+                sub($i, value, $i);
+            }
+        }
+        print $0;
+    }
+' dodatkowe/simple.json | tr -d '{: ' | awk '
+    {
+        while (match($0, /<[^\/<>]*><\/[^<>]*>/, tablica) != 0) {
+            i++;
+            end = match(tablica[i - 1], /><\//);
+            key = substr(tablica[i - 1], 2, end - 2);
+            key = "<" key " />";
+            sub(tablica[i - 1], key, $0)
+        }
+        print $0;
+    }
+'

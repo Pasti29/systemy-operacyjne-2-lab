@@ -21,3 +21,16 @@
 # za wszystkimi pojedynczymi literami w tekście.
 #
 
+
+grep -P '^#' zad9.sh | awk '
+    {
+        for (i = 1; i <= NF; i++) {
+            if (length($i) == 1 && $i ~ /[[:lower:]]/) {
+                $i = $i "&nbsp;" $(i + 1);
+                $(i + 1) = "";
+            }
+        }
+       
+        printf "%s\n", $0;
+    }
+' | tr -s ' '
