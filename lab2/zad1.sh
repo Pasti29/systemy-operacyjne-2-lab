@@ -22,7 +22,3 @@
 # a jeśli nie, to go utworzyć. Zawartość pliku nie ma znaczenia.
 #
 
-
-if [ ! -e ddd/pierwszy ]; then
-    touch ddd/pierwszy
-fi

@@ -23,7 +23,3 @@
 #
 
 
-awk '
-    $0 !~ /^[[:blank:]]*$/ { nonBlank++; }
-    END { printf "%s/%s\n", nonBlank, NR; }
-' dodatkowe/slajdy.tex

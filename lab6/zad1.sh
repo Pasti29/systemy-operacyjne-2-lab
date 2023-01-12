@@ -26,4 +26,3 @@
 #
 
 
-awk '(NR + 1) % 3 == 0' dodatkowe/tadeusz.txt

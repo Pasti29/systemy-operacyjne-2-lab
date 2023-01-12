@@ -22,5 +22,3 @@
 # upewniając się, że nie nadpiszemy żadnego istniejącego pliku w `ddd`.
 #
 
-
-find aaa/ -type f -exec cp -rn -t ddd/ {} + 

@@ -23,4 +23,3 @@
 #
 
 
-cat dodatkowe/etc-passwd | wc -l

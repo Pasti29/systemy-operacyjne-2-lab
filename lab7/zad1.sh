@@ -22,12 +22,3 @@
 #
 
 
-awk '
-    {
-        for (i = 1; i <= NF; i++) {
-            if ($i ~ /^[A-Z]/) {
-                printf "%s\n", $i;
-            }
-        }
-    }
-' dodatkowe/lipsum.txt | sort | uniq

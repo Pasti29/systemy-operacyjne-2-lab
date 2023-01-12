@@ -28,8 +28,3 @@
 #
 
 
-awk '
-    BEGIN { FS = "," }
-    NR == 1 { numCol = NF }
-    numCol != NF { print NR }
-' dodatkowe/cities.csv

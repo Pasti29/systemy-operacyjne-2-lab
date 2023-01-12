@@ -23,4 +23,3 @@
 #
 
 
-cat dodatkowe/ps-aux | tail -n +2 | tr -s ' ' | sort -k 3 | tail -n 1 | cut -d ' ' -f 2,11-16

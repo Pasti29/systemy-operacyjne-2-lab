@@ -25,12 +25,3 @@
 #
 
 
-awk '
-    {
-        for (i = 1; i <= NF; i++) {
-            if ($i ~ /:\/\//) {
-                printf "%s\n", $i;
-            }
-        }
-    }
-' dodatkowe/slajdy.tex | cut -d '{' -f2 | cut -d '}' -f1 | sort | uniq

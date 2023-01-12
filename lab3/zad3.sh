@@ -23,4 +23,3 @@
 # Nie wyświetlać nic ponadto!
 #
 
-find dane/pierwiastki -type l ! -exec test -e {} \; -exec basename {} \;

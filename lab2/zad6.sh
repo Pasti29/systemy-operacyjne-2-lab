@@ -24,4 +24,3 @@
 #
 
 
-grep -rl bbb/ -f 'ddd/bardzo tajna treść' | xargs cp -nt ddd/

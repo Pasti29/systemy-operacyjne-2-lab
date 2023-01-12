@@ -28,10 +28,3 @@
 #
 
 
-find coreutils-8.32 -printf "%s\n" | awk '
-    { sumBytes += $0 }
-    END {
-        sumMB = sumBytes / 1048576;
-        print sumMB;
-    }
-'

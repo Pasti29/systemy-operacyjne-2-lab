@@ -25,4 +25,3 @@
 # Wyświetlić same nazwy pasujących plików, każdą nazwę w osobnej linii.
 #
 
-find linux-5.11.13/ -name '[A-Z]*.py' \! -executable -exec basename {} \;

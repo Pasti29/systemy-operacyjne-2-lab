@@ -29,4 +29,3 @@
 #
 
 
-find linux-5.11.13/ -name 'mips' -prune -o \( \( -name ''core.c -o -name 'irq.c' \) -a \( \( -path '*/bluetooth/*' -a \( -size 30k -o -size +30k \) \) -o \(  -size -1k -o -size 1k \) \) \) -print

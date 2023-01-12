@@ -25,7 +25,3 @@
 #
 
 
-awk '
-    NR >= 2 { sumCPU += $3; sumRAM += $4 }
-    END { printf "CPU: %s\n", sumCPU; printf "RAM: %s\n", sumRAM }
-' dodatkowe/ps-aux

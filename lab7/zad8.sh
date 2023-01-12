@@ -22,18 +22,3 @@
 #
 
 
-awk --re-interval '
-    {
-        gsub(/°C/, "°F");
-        for (i = 1; i <= NF; i++) {
-            start = match($i, /([0-9]{1,3})?\.[0-9]/);
-            end = match($i, /°/);
-            if (start != 0) {
-                temp = substr($i, start, end - start);
-                newTemp = temp * 9/5 + 32;
-                sub(temp, newTemp, $0);
-            } 
-        }
-        printf "%s\n", $0;
-    }
-' dodatkowe/sensors.txt

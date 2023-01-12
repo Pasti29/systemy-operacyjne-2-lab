@@ -22,6 +22,3 @@
 # Jeśli któregoś brakuje, nie wyświetlać nic.
 #
 
-if [ -e dane/atom ]; then
-    cat dane/atom
-fi

@@ -24,4 +24,3 @@
 #
 
 
-cat dodatkowe/etc-passwd | grep -v '/bin/nologin' | grep -v '/bin/false' | cut -d ':' -f 1

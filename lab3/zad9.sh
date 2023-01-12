@@ -27,14 +27,3 @@
 #
 
 
-while IFS= read -r file; do
-    if [ ! -e "$file" ]; then
-        name_of_file="$(basename "$file")"
-        original_file="$(find . -type f -name "$name_of_file")"
-        if [ -n "$original_file" ]; then
-            directory_name="$(dirname "$file")"
-            path="$(realpath --relative-to="$directory_name" "$original_file")"
-            echo "$name_of_file: $path"
-        fi
-    fi
-done < <(find dane/ -maxdepth 2 -type l)

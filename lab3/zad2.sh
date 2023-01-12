@@ -22,4 +22,3 @@
 # tylko i wyłącznie samą liczbę.
 #
 
-find dane/pierwiastki -type l | wc -l

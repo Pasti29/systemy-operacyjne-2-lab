@@ -33,19 +33,3 @@
 #
 
 
-for file in $(find ddd -name nazwy*); do
-    cat "$file" | while read line; do
-        rm -f ddd/zasoby/"$line"
-    done
-done
-
-for file in $(find ddd -name nazwy*); do
-    cat "$file" | while read line; do
-        if [ ! -e ddd/zasoby/"$line" ]; then
-            echo 0 > ddd/zasoby/"$line"
-        else
-            count=$(cat ddd/zasoby/"$line")
-            echo $((count + 1)) > ddd/zasoby/"$line"
-        fi
-    done
-done

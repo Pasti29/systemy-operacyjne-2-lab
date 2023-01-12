@@ -27,15 +27,3 @@
 #
 
 
-# grep '\includegraphics' dodatkowe/slajdy.tex | awk '
-#     {
-#         match($0, /{(.)+}/, tablica);
-#     }
-#     END {
-#         for (i in tablica) {
-#             printf "%s\n", i;
-#         }
-#     }
-# '
-
-grep '\\fbox' dodatkowe/slajdy.tex | grep '\\includegraphics' | grep -o -P '{([^\[\]\{\}])+}' | tr -d '{}' | sort | uniq

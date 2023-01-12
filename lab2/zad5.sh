@@ -27,8 +27,3 @@
 #
 
 
-if [ ! -d ddd/głęboki ]; then
-    mkdir ddd/głęboki
-fi
-
-find bbb/ -type f -exec cp -nt ddd/głęboki/ {} +

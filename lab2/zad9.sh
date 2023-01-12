@@ -27,10 +27,3 @@
 # że na pewno możemy je przeczytać).
 #
 
-target_file='ddd/zasoby/tajne hasła'
-
-if [ -e "$target_file" ]; then
-    rm "$target_file"
-fi
-
-find ccc/ -readable -type f -exec echo {} >> "$target_file" \; -exec cat {} >> "$target_file" \;

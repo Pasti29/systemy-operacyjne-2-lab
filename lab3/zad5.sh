@@ -22,8 +22,3 @@
 # w osobnej linii.
 #
 
-while IFS= read -r file; do
-    if [ "$file" -ef dane/twardziel ]; then
-        basename "$file"
-    fi
-done < <(find dane/icao/)

@@ -22,8 +22,3 @@
 # Jako wynik wyświetlić pasujące wpisy z pliku (ścieżki do dowiązań).
 #
 
-while IFS= read -r line; do
-    if [ -h "$line" ] && [ -x "$line" ]; then
-        echo "$line"
-    fi
-done < dane/links.txt

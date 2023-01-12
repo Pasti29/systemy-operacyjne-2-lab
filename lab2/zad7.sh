@@ -24,5 +24,3 @@
 # "Uważaj na te pliki:" oraz lista znalezionych plików (każdy w nowej linii).
 #
 
-echo "Uważaj na te pliki:" > ddd/ostrzeżenie
-find bbb/ -type f -executable >> ddd/ostrzeżenie

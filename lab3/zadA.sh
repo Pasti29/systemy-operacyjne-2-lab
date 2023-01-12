@@ -24,20 +24,3 @@
 #
 
 
-touch help_file
-
-while IFS= read -r file1; do
-    unique=1
-    while read -r file2; do
-        if [ "$file1" -ef "$file2" ]; then
-            unique=0
-        fi
-    done < help_file
-    if [ "$unique" -eq 1 ]; then
-        echo "$file1" >> help_file
-    fi
-done < <(find dane/icao/ -type f)
-
-count=$(wc -l < help_file)
-echo "$count"
-rm help_file

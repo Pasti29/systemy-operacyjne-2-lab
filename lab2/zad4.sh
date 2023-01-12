@@ -25,4 +25,3 @@
 #
 
 
-find aaa/ -type f -exec cat {} + > ddd/całość

@@ -24,4 +24,3 @@
 #
 
 
-cat dodatkowe/etc-services | grep 'syslog' | tr -s ' ' | cut -d ' ' -f 2 | cut -d '/' -f 1 | sort | uniq 

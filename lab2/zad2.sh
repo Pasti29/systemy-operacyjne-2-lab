@@ -23,11 +23,3 @@
 # to odpowiedni plik stworzyć lub nadpisać istniejący.
 #
 
-
-if [ -e ddd/drugi ]; then
-    if [ "$(cat ddd/drugi)" != 'Ala ma kota.' ]; then
-        echo 'Ala ma kota.' > ddd/drugi
-    fi
-else
-    echo 'Ala ma kota.' > ddd/drugi
-fi

@@ -23,4 +23,3 @@
 #
 
 
-find coreutils-8.32/ -type f -exec basename {} \; | sort | uniq -c | sort | tail -n 1 | tr -s ' ' | cut -d ' ' -f 3

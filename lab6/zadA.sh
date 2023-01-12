@@ -36,18 +36,3 @@
 #
 
 
-awk '
-    BEGIN { start = -1 }
-    index($0, "Prowadzący:") != 0 {
-        name = substr($0, index($0, ":") + 2);
-        start = NR;
-    }
-    start != -1 && NR > start {
-        matrix[name] += length($0);
-    }
-    END {
-        for (name in matrix) {
-            printf "%s  %s\n", matrix[name], name;
-        }
-    }
-' dodatkowe/doc-tajemnic.txt

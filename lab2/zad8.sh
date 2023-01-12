@@ -26,8 +26,3 @@
 #
 
 
-if [ ! -d ddd/zapasy/ ]; then
-    mkdir ddd/zapasy/
-fi
-find aaa/ ! -writable -exec cp -rn --parents -t ddd/zapasy/ {} +
-find bbb/ ! -writable -exec cp -rn --parents -t ddd/zapasy/ {} +

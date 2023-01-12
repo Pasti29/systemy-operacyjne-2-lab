@@ -26,25 +26,3 @@
 #
 
 
-awk '
-    {
-        lengthOfLine = 0;
-        split($0, tablica, " ");
-        for (word in tablica) {
-            if (lengthOfLine == 0) {
-                lengthOfLine += length($word);
-                printf "%s", $word;
-                continue;
-            }
-            lengthOfLine += (length($word) + 1);
-            if (lengthOfLine < 80) {
-                printf " %s", $word;
-            }
-            else {
-                lengthOfLine = length($word);
-                printf "\n%s", $word;
-            }
-        }
-    }
-    END { printf "\n"; }
-' dodatkowe/lipsum.txt

@@ -24,17 +24,3 @@
 #
 
 
-# find coreutils-8.32/ -type f \( -name '*.c' -or -name '*.h' \) -exec grep -o '#include <stdio.h>' {} \; | wc -l
-# fileCount=0
-
-# while IFS= read -r file; do
-#     countLines=$(grep -o '#include <stdio.h>' "$file" | wc -l)
-#     if [ "$countLines" -gt 0 ]; then
-#         fileCount=$((fileCount+1))
-#         echo "$fileCount : $countLines + $file"
-#     fi
-#     # fileCount=$((fileCount+countLines))
-# done <<<"$(find coreutils-8.32/ -type f )"
-# echo "$fileCount"
-
-grep -r -x '#include <stdio.h>' coreutils-8.32/* | sort | uniq | wc -l 
